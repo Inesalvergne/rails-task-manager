@@ -1,11 +1,17 @@
 <h1>My todo list</h1>
 <ul>
   <% @tasks.each do |task| %>
-    <li> <%= link_to task.title, task_path(task) %> - <%= link_to "Delete",
+    <li> <%= link_to task.title, task_path(task) %>
+          - <%= link_to "Delete",
           task_path(task),
           method: :delete,
-          data: { confirm: "Are you sure?" }
-    %> </li>
+          data: { confirm: "Are you sure?" }  %>
+          <% if task.completed == true %>
+                <p> Done ✅</p>
+              <% else %>
+                <p> To-do ❌ </p>
+              <% end %>
+   </li>
   <% end %>
 </ul>
 

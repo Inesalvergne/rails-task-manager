@@ -1,9 +1,9 @@
 <h2> <%= @task.title %> </h2>
 <p> <%= @task.details %> </p>
 <% if @task.completed == true %>
-  <p> Completed ✅</p>
+  <p> Done ✅</p>
   <% else %>
-  <p> Not completed ❌ </p>
+  <p> To-do ❌ </p>
 <% end %>
 <%= link_to "Edit the task", edit_task_path(@task) %>
 <p> <%= link_to "Go back to checklist", tasks_path %>
