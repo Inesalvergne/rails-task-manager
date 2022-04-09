@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   # 2. As a user, I can view the details of a task
   get '/tasks/:id', to: 'tasks#show', as: :task
 
+  # 4. As a user, I can edit a task
+  get '/tasks/:id/id', to: 'tasks#edit'
+  path '/tasks/:id', to: 'tasks#update'
+
 end
