@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # 1. As a user, I can list tasks
-  get 'tasks', to: 'tasks#index', as: :index
+  get 'tasks', to: 'tasks#index'
 
   # 3. As a user, I can add a new task
   get 'tasks/new', to: 'tasks#new', as: :new_task
@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   get 'tasks/:id/edit', to: 'tasks#edit', as: :edit_task
   patch 'tasks/:id', to: 'tasks#update'
 
+  # 5. As a user, I can delete a task
+  delete 'tasks/:id', to: 'tasks#destroy'
 end
