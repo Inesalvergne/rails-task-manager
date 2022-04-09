@@ -21,9 +21,19 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
+  def complete
+    @task = Task.find(params[:id])
+    @task.update_attribute(:completed, [true|false])
+    redirect_to task_path(@task)
+  end
+
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
+    if params[:completed].eql?('1')
+      @task.completed = true
+      @task.save
+    end
     redirect_to task_path(@task)
   end
 

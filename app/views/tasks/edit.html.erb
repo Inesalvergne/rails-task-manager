@@ -3,5 +3,7 @@
   <%= f.text_field :title %>
   <%= f.label :details %>
   <%= f.text_field :details %>
+  <%= check_box_tag(:completed) %>
+  <%= label_tag(:completed, "Check if completed") %>
   <%= f.submit %>
 <% end %>
